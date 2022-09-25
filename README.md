@@ -22,8 +22,8 @@ Replace `$YOURTIMEZONE` with correct time zone and `$YOURIFACE` with network int
 
 ```sh
 docker run --name wyl \
-	-e "IFACE=$YOURIFACE" \
-	-e "TZ=$YOURTIMEZONE" \
+	-e IFACE="$YOURIFACE" \
+	-e TZ="$YOURTIMEZONE" \
 	--network="host" \
     aceberg/watchyourlan
 ```
@@ -32,8 +32,8 @@ Set `$DOCKERDATAPATH` for container to save data:
 
 ```sh
 docker run --name wyl \
-	-e "IFACE=$YOURIFACE" \
-	-e "TZ=$YOURTIMEZONE" \
+	-e IFACE="$YOURIFACE" \
+	-e TZ="$YOURTIMEZONE" \
 	--network="host" \
 	-v $DOCKERDATAPATH/wyl:/data \
     aceberg/watchyourlan
